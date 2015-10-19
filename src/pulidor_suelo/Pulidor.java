@@ -13,29 +13,17 @@ public class Pulidor extends JFrame{
         suelo_= new Baldosa[filas][columnas];
         boolean obstaculos[][] = new boolean [filas][columnas];
         Random rnd = new Random();
-        int cont=0;
-        int a[]= new int[4];
-        int b[] = new int[4];
-        while(cont<=3){
-            a[cont]=((int)(rnd.nextDouble()*10.0)) % filas;
-            b[cont]=((int)(rnd.nextDouble()*10.0)) % columnas;
-            for (int i=0; i<filas; i++){
-                for (int j=0; j<columnas; j++){
-                    if ((a[cont] == i) && (b[cont] == j)){
-                        suelo_[i][j] = new Baldosa (true, i, j);
-                        this.getContentPane().add(new Baldosa(true, i, j));
-                        System.out.print(i+""+j+" ");
-                    }
-                    else {
-                        suelo_[i][j] = new Baldosa (false, i, j);
-                        this.getContentPane().add(new Baldosa(false, i, j));
-                        System.out.print(i+""+j+" ");
-                    }
-                }
-                System.out.println();
+        for (int ale=0; ale<5; ale++){
+            int a=((int)(rnd.nextDouble()*10.0)) % filas;
+            int b=((int)(rnd.nextDouble()*10.0)) % columnas;
+            System.out.println(a+", "+b);
+            if (obstaculos[a][b]){
+                ale--;
             }
+            obstaculos[a][b] = true;
         }
-        /*for (int i=0; i<filas; i++){
+        
+        for (int i=0; i<filas; i++){
             for (int j=0; j<columnas; j++){
                 if (obstaculos[i][j] == false){
                     suelo_[i][j] = new Baldosa (false, i, j);
@@ -49,7 +37,7 @@ public class Pulidor extends JFrame{
                 }
             }
             System.out.println();
-        }*/
+        }    
         
         this.setSize(600, 600);
         this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);

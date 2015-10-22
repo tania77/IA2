@@ -13,7 +13,7 @@ public class Pulidor extends JFrame{
         suelo_= new Baldosa[filas][columnas];
         boolean obstaculos[][] = new boolean [filas][columnas];
         Random rnd = new Random();
-        for (int ale=0; ale<5; ale++){
+        for (int ale=0; ale<15; ale++){
             int a=((int)(rnd.nextDouble()*10.0)) % filas;
             int b=((int)(rnd.nextDouble()*10.0)) % columnas;
             System.out.println(a+", "+b);

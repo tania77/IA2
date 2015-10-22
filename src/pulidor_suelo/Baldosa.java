@@ -25,16 +25,16 @@ public class Baldosa extends JPanel{
     public void paint (Graphics g){
         if (obstaculo){
             g.setColor(Color.red);
-            g.fillRect(posX, posY, 200, 200);
+            g.fillRect(0, 0, 200, 200);
         }
         else{
             if ((posX+posY)%2 == 0){
                 g.setColor(Color.white);
-                g.fillRect(posX, posY, 200, 200);
+                g.fillRect(0, 0, 200, 200);
             }
             else {
                 g.setColor(Color.black);
-                g.fillRect(posX, posY, 200, 200);
+                g.fillRect(0, 0, 200, 200);
             }
         }
         
